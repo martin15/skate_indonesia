@@ -1,0 +1,132 @@
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag "slick" %>
+  <%= stylesheet_link_tag  "slick" %>
+<% end %>
+
+<script>
+$(document).ready(function(){
+  $('.oca-images-slider').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    fade: true,
+    <%#*dots: true,%>
+    <%#*adaptiveHeight: true,%>
+    nextArrow: $('.prev'),
+    prevArrow: $('.next')
+  })
+});
+</script>
+
+<section class="main-section <%= manage_menu %>">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 header-n-breadcrumb">
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <h2>OASIS CENTRE ARENA</h2>
+          </div>
+          <div class="col-12 col-md-6 align-self-center">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><%= link_to "HOME", root_path %></li>
+                <li class="breadcrumb-item active" aria-current="page">OASIS CENTRE ARENA</li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div class="col-12" id="contact-us">
+        <div class="row mb-3">
+          <div class="col-12 page-header">
+            <h4>RINK ADDRESS</h4>
+          </div>
+          <div class="col-12 col-md-6 oca-image">
+            <div class="oca-images-slider">
+              <% (0..3) .each do |img| %>
+                <div class="item"><%= image_tag "rink01.jpg", class: "img-fluid" %></div>
+              <% end %>
+            </div>
+            <div class="wrap-slick3-arrows flex-sb-m flex-w">
+              <button class="arrow-slick3 prev slick-arrow" style="">
+                <i class="fa fa-angle-left" aria-hidden="true"></i>
+              </button>
+              <button class="arrow-slick3 next slick-arrow" style="">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 address">
+            <p><strong>Oasis Centre Arena</strong><br />
+            AEON Mall Jakarta Garden City – 1F<br />
+            Jl. Boulevard Jakarta Garden City<br />
+            Jakarta Garden City – Cakung<br />
+            East Jakarta – 13910</p>
+            <p>Email : info@oasiscentrearena.com</p>
+          </div>
+
+          <hr class="col-12 divider double dotted"></hr>
+
+          <div class="col-12 page-header">
+            <h4>DISTANCE FROM INTERNATIONAL AIRPORT</h4>
+          </div>
+          <div class="col-12 col-md-6 map" id="map"></div>
+          <script>
+            var map;
+            function initMap() {
+              map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: -6.172449, lng: 106.951936},
+                mapTypeControl: false,
+                zoom: 17
+                <%#*scrollwheel: false,%>
+                <%#*styles: [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"color":"#000000"},{"lightness":13}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#144b53"},{"lightness":14},{"weight":1.4}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#08304b"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#0c4152"},{"lightness":5}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#0b434f"},{"lightness":25}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#000000"}]},{"featureType":"road.arterial","elementType":"geometry.stroke","stylers":[{"color":"#0b3d51"},{"lightness":16}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"}]},{"featureType":"transit","elementType":"all","stylers":[{"color":"#146474"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#021019"}]}]%>
+              });
+              var marker = new google.maps.Marker({
+                map: map,
+                position: {lat: -6.172449, lng: 106.951936},
+                title: 'Oasis Centre Arena'
+              });
+
+            }
+          </script>
+          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnNJ6kkXnA5of0MVsW36r0meDM0schA4A&callback=initMap" async defer></script>
+
+          <div class="col-12 col-md-6 oca-direction">
+            <p><strong>Soekarno-Hatta International Airport – Cengkareng, Tanggerang</strong></p>
+            <p>distance : 45 km via Tol Pelabuhan<br />
+               estimated time : 45 minutes (by taxi).</p>
+          </div>
+
+          <hr class="col-12 divider double dotted"></hr>
+
+          <div class="col-12 col-md-6 map" id="map2"></div>
+          <script>
+            var map;
+            function initMap2() {
+              map = new google.maps.Map(document.getElementById('map2'), {
+                center: {lat: -6.172449, lng: 106.951936},
+                mapTypeControl: false,
+                zoom: 17
+                <%#*scrollwheel: false,%>
+                <%#*styles: [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"color":"#000000"},{"lightness":13}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#144b53"},{"lightness":14},{"weight":1.4}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#08304b"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#0c4152"},{"lightness":5}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#0b434f"},{"lightness":25}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#000000"}]},{"featureType":"road.arterial","elementType":"geometry.stroke","stylers":[{"color":"#0b3d51"},{"lightness":16}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"}]},{"featureType":"transit","elementType":"all","stylers":[{"color":"#146474"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#021019"}]}]%>
+              });
+              var marker = new google.maps.Marker({
+                map: map,
+                position: {lat: -6.172449, lng: 106.951936},
+                title: 'Oasis Centre Arena'
+              });
+
+            }
+          </script>
+          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnNJ6kkXnA5of0MVsW36r0meDM0schA4A&callback=initMap2" async defer></script>
+
+          <div class="col-12 col-md-6 oca-direction">
+            <p><strong>Halim Perdanakusumah International Airport - Jakarta</strong></p>
+            <p>distance : 25 km via Tol Becakayu<br />
+               estimated time : 45 minutes (by taxi).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

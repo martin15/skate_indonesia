@@ -1,0 +1,105 @@
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag "lightgallery", "lg-video", "lg-hash", "lg-pager", "jquery.mousewheel.min" %>
+  <%= stylesheet_link_tag  "lightgallery" %>
+<% end %>
+
+<section class="main-section <%= manage_menu %>">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 header-n-breadcrumb">
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <h2>AEON MALL Jakarta Garden City</h2>
+          </div>
+          <div class="col-12 col-md-6 align-self-center">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><%= link_to "HOME", root_path %></li>
+                <li class="breadcrumb-item active" aria-current="page">AEON MALL Jakarta Garden City </li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div class="col-12" id="tenant">
+        <div class="row mb-3">
+          <div class="col-12 main-building">
+            <%= image_tag "main_building.jpg", class: "img-fluid" %>
+          </div>
+          <div class="col-12 mall-desc-header"><%= raw(@mall_desc_header.content) %></div>
+
+          <% @tenants.each_with_index do |tenant, x| %>
+            <div class="col-12 tenant" >
+              <div class="row">
+                <% if x%2 == 0  %>
+                  <div class="col-12 col-md-8">
+                    <div class="ten-name"><%= tenant.name %></div>
+                    <div class="ten-desc"><%= raw(tenant.description) %></div>
+                  </div>
+                  <div class="col-12 col-md-4 row sm-galleries" id="lightgallery-<%= tenant.id %>">
+                    <div class="col-12 text-right" data-src="<%= tenant.image(:large) %>">
+                      <%= image_tag tenant.image('thumb'), class: "img-fluid" %>
+                    </div>
+                    <% tenant.galleries.each do |img|  %>
+                      <div class="col-12 col-md-4 text-right" data-src="<%= img.image.url(:large) %>"></div>
+                    <% end %>
+                  </div>
+                <% else %>
+                  <div class="col-12 col-md-4 row sm-galleries" id="lightgallery-<%= tenant.id %>">
+                    <div class="col-12" data-src="<%= tenant.image(:large) %>">
+                      <%= image_tag tenant.image('thumb'), class: "img-fluid" %>
+                    </div>
+                    <% tenant.galleries.each do |img|  %>
+                      <div class="col-12 col-md-4 text-right" data-src="<%= img.image.url(:large) %>"></div>
+                    <% end %>
+                  </div>
+                  <div class="col-12 col-md-8">
+                    <div class="ten-name"><%= tenant.name %></div>
+                    <div class="ten-desc"><%= raw(tenant.description) %></div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+          <div class="col-12 mall-desc-footer"><%= raw(@mall_desc_footer.content) %></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    <% @tenants.each do |tenant| %>
+      $('#lightgallery-<%= tenant.id %>').lightGallery({
+        fullScreen: false,
+        pager: false,
+        zoom: false,
+        hash: false,
+        share: false,
+        facebook: false,
+        twitter: false,
+        googlePlus: false,
+        pinterest: false
+
+      });
+    <% end %>
+  });
+</script>
+<!--
+<script type="text/javascript">
+  $(document).ready(function(){
+      $('#lightgallery-4').lightGallery({
+        fullScreen: false,
+        pager: false,
+        zoom: false,
+        hash: false,
+        share: false,
+        facebook: false,
+        twitter: false,
+        googlePlus: false,
+        pinterest: false
+
+      });
+  });
+</script>-->

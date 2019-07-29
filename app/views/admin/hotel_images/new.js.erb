@@ -1,0 +1,4 @@
+<% unless @hotel_image.nil? %>
+  $("#edit-image").html("<%= j(raw( render partial: 'modal_form', locals: {hotel_image: @hotel_image, title: "New", url: admin_hotel_images_path(@hotel.id), method: 'post'}  )) %>");
+  $("#edit-image-modal").modal("show")
+<% end %>
