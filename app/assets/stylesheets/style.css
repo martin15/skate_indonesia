@@ -550,6 +550,176 @@ section.with-user-bar {
   padding-bottom: 10px;
 }
 
+/* ====================== TENANT  ======================*/
+#tenant .main-building{ margin-bottom: 20px; }
+#tenant .mall-desc-header, #tenant .mall-desc-footer {
+  font-size: 15px;
+  line-height: 25px;
+  margin-bottom: 30px;
+}
+#tenant .mall-desc-footer {margin-top: 20px;}
+#tenant .tenant{ margin-bottom: 20px; }
+#tenant .tenant .ten-name {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #ed1b26;
+  position: relative;
+}
+#tenant .tenant .ten-desc { font-size: 14px;line-height: 25px; }
+#tenant .tenant .sm-galleries img{ cursor: pointer; }
+
+/* ====================== ABOUT US  ======================*/
+#greeting-note{
+  padding-top: 50px!important;
+  padding-bottom: 10px!important;
+}
+
+#greeting-note .container{
+  border-bottom: solid 1px #cecece;
+}
+
+#greeting-note .content-value{ margin-bottom: 40px; }
+#greeting-note a{ color: #3c3c3c; }
+#greeting-note a:hover{ color: #ed1b26; }
+
+#home-note{
+  padding-top: 40px!important;
+  padding-bottom: 25px!important;
+}
+
+#home-note .simple-content{ font-size: 14px; }
+#home-note .simple-content .home-content-value{ padding: 0 75px;line-height: 2; }
+#home-note h1.section-title {
+  margin-bottom: 40px;
+  font-size: 32px;
+  color: #ed1b26;
+  text-align: center;
+  font-weight: 600;
+}
+
+#home-note .simple-content {
+  margin-top: 30px;
+}
+
+/* ====================== Contact US ======================*/
+#contact-us h4{
+  color: #ed1b26;
+  margin-bottom: 30px;
+}
+
+#contact-us .oca-direction{ margin-bottom: 150px;padding-left: 50px; }
+#contact-us .address p, #contact-us .oca-direction p{
+  line-height: 2;
+  color: #767676;
+  font-size: 14px;
+}
+
+hr.divider{margin: 50px 0;}
+hr.double.dotted { border-top: 1px dotted #dddddd; }
+hr.dotted  { border-bottom: 1px dotted #dddddd; }
+hr.double {
+  border-top: 1px solid #dddddd;
+  height: 10px;
+}
+
+#contact-us .address p strong{ font-size: 14px; }
+#contact-us .cai-title-1{
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+}
+
+#contact-us .cai-title-2{
+  font-size: 24 px;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+#contact-us .ca-info .text {
+  margin: 0 0 38px;
+  font-size: 13px;
+  color: #393939;
+}
+
+#contact-us .ca-info .info {
+  list-style: outside none none;
+  padding: 0;
+  font-size: 12px;
+}
+
+#contact-us .ca-info .info li {
+  margin: 0 0 27px;
+  padding: 0 0 0 46px;
+  position: relative;
+}
+
+#contact-us .ca-info .info li .icon {
+  color: #ed1b26;
+  font-size: 34px;
+  left: 0;
+  line-height: 34px;
+  position: absolute;
+  top: 0;
+  width: 36px;
+}
+
+#contact-us .ca-info .info li .title {
+  color: #393939;
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 22px;
+  margin: 0 0 1px;
+}
+
+#contact-us .ca-info .info li .details {
+  color: #393939;
+  display: block;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: 22px;
+}
+
+#contact-us .ca-form { margin: 0 0 30px; }
+#contact-us .ca-form .title {
+  font-size: 16px;
+  line-height: 40px;
+  margin: 0 0 4px;
+  color: #393939;
+}
+#contact-us .ca-form .info { margin: 0 0 23px; font-size: 14px;}
+#contact-us .ca-form .ca-input-box { margin: 0 0 16px; }
+
+.ca-form .ca-input-box input[type="text"] {
+  border: 1px solid #e1e1e1;
+  height: 50px;
+  letter-spacing: 0;
+  padding: 0 10px;
+  width: 100%;
+}
+
+.ca-form .ca-input-box textarea {
+  border: 1px solid #e1e1e1;
+  height: 130px;
+  letter-spacing: 0;
+  padding: 0 10px;
+  width: 100%;
+}
+
+.btn-outline-green {
+  color: #ed1b26;
+  background-color: transparent;
+  background-image: none;
+  border-color: #ed1b26!important;
+}
+
+.btn-outline-green:hover {
+  color: #fff;
+  background-color: #ed1b26;
+  border-color: #ed1b26;
+}
 /* ====================== DOWNLAODS  ======================*/
 .download {
   background: #fff none repeat scroll 0 0;
@@ -561,14 +731,8 @@ section.with-user-bar {
   transition: all 0.3s ease 0s;
   color: #686868;
 }
-
-.download:hover {
-    border-bottom: 2px solid #ed1b26;
-}
-.download .icon {
-  font-size: 16px;
-}
-
+.download:hover { border-bottom: 2px solid #ed1b26; }
+.download .icon { font-size: 16px; }
 .download .icon img{ width:30px; margin-right: 10px; }
 /* --------------------------------------------
  *  breadcrumb
