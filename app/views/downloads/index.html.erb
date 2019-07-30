@@ -4,25 +4,28 @@
       <div class="col-12 header-n-breadcrumb">
         <div class="row">
           <div class="col-12 col-md-6">
-            <h2>DOWNLOAD</h2>
+            <h2>DOWNLOADS</h2>
           </div>
           <div class="col-12 col-md-6 align-self-center">
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
                 <li class="breadcrumb-item"><%= link_to "HOME", root_path %></li>
-                <li class="breadcrumb-item active" aria-current="page">DOWNLOAD</li>
+                <li class="breadcrumb-item active" aria-current="page">DOWNLOADS</li>
               </ol>
             </nav>
           </div>
         </div>
       </div>
-      <div class="col-12" id="contact-us">
+      <div class="col-12 download-list">
         <div class="row mb-3">
-          <div class="col-12 col-md-6 address">
-            <% @downloads.each do |download| %>
-              <%= link_to download.title, download.file.url %><br />
+          <% @downloads.each do |download| %>
+            <%= link_to download.file.url, class: "col-12 col-md-6 download" do %>
+              <div class="icon">
+                <%= image_tag "snowflake.png", class: "img-fluid" %>
+                <%= download.title %>
+              </div>
             <% end %>
-          </div>
+          <% end %>
         </div>
       </div>
     </div>
