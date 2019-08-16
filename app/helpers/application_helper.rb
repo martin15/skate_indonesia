@@ -23,4 +23,12 @@ module ApplicationHelper
     return "" if text.blank?
     return "<span class='tg-themetag tg-featuretag'>#{text}</span>"
   end
+
+  def hotel_star(counter)
+    str = ""
+    counter.to_i.times.each do |x|
+      str += "<i class='fa fa-star'></i>"
+    end
+    return str
+  end
 end

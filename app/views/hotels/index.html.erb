@@ -1,6 +1,6 @@
 <% content_for :javascript_includes do %>
-  <%= javascript_include_tag "lightgallery", "lg-video", "lg-hash", "lg-pager", "jquery.mousewheel.min" %>
-  <%= stylesheet_link_tag  "lightgallery" %>
+  <%= javascript_include_tag "slick" %>
+  <%= stylesheet_link_tag  "slick" %>
 <% end %>
 
 <section class="main-section <%= manage_menu %>">
@@ -21,9 +21,75 @@
           </div>
         </div>
       </div>
-      <div class="col-12" id="tenant">
-        COMING SOON !!
-      </div>
+
+      <% @hotels.each_with_index do |hotel, x| %>
+        <div class="col-12" id="hotel">
+          <div class="row">
+            <div class="col-12 hotel-name"><%= hotel.name %></div>
+
+            <% ordering_1 = x%2 == 0 ? "order-md-1" : "order-md-2" %>
+            <% ordering_2 = x%2 == 0 ? "order-md-2" : "order-md-1" %>
+            <% hotel_images = hotel.hotel_images %>
+            <div class="col-12 col-md-6 <%= ordering_1 %> hotel-img">
+              <div class="row img-slider">
+                <div class="col-12">
+                  <div class="hotel-images-<%= hotel.id %>">
+                    <% hotel_images .each do |img| %>
+                      <div class="item"><%= image_tag img.image.url(:medium), class: "img-fluid" %></div>
+                    <% end %>
+                  </div>
+                  <div class="wrap-slick3-arrows flex-sb-m flex-w">
+                    <button class="arrow-slick3 prev navPrev-<%= hotel.id %> slick-arrow" style="">
+                      <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    </button>
+                    <button class="arrow-slick3 next navNext-<%= hotel.id %> slick-arrow" style="">
+                      <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="col-12 slider-parent">
+                  <div class="hotel-images-slider-<%= hotel.id %>">
+                    <% hotel_images.each do |img| %>
+                      <div class="item" style="padding:5px;"><%= image_tag img.image.url(:thumb), class: "img-fluid" %></div>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+              <p class="add-info">
+                <strong>Hotel Rating</strong> : <%= raw hotel_star(hotel.rating) %><br>
+                <strong>Address</strong> : <%= hotel.address %><br>
+                <strong>Phone</strong> : <%= hotel.phone %>
+              </p>
+            </div>
+            <div class="col-12 col-md-6 <%= ordering_2 %> hotel-desc"><%= raw hotel.description %></div>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </section>
+
+
+<script>
+$(document).ready(function(){
+  <% @hotels.each do |hotel| %>
+    $('.hotel-images-<%= hotel.id %>').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      fade: true,
+      asNavFor: '.hotel-images-slider-<%= hotel.id %>',
+      nextArrow: $('.navPrev-<%= hotel.id %>'),
+      prevArrow: $('.navNext-<%= hotel.id %>')
+    });
+    $('.hotel-images-slider-<%= hotel.id %>').slick({
+      slidesToShow: 5,
+      slidesToScroll: 1,
+      asNavFor: '.hotel-images-<%= hotel.id %>',
+      centerMode: true,
+      focusOnSelect: true,
+      arrows: false,
+      infinite: false
+    });
+  <% end %>
+});
+</script>
