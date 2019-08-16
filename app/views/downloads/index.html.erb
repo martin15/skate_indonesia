@@ -19,7 +19,7 @@
       <div class="col-12 download-list">
         <div class="row mb-3">
           <% @downloads.each do |download| %>
-            <%= link_to download.file.url, class: "col-12 col-md-5 download" do %>
+            <%= link_to download.file.url, class: "col-12 col-md-5 download", target: "_blank" do %>
               <div class="icon">
                 <%= image_tag "snowflake.png", class: "img-fluid" %>
                 <%= download.title %>
