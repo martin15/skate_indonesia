@@ -573,6 +573,14 @@ section.with-user-bar {
 #tenant .tenant .ten-desc { font-size: 14px;line-height: 25px; }
 #tenant .tenant .sm-galleries img{ cursor: pointer; }
 
+/* ======================   PLACES  ======================*/
+#place-header{ font-size: 14px; color: #131313; margin-bottom: 60px;}
+#place{ margin-bottom: 40px }
+#place .plc-name{ font-size: 30px; margin-bottom: 15px;}
+#place .plc-desc{margin-bottom: 20px;}
+#place .plc-desc p{ font-size: 14px;}
+#place .plc-address, #place .plc-url{ font-size: 13px; margin-bottom: 10px;}
+
 /* ====================== ABOUT US  ======================*/
 #greeting-note{
   padding-top: 50px!important;
@@ -778,7 +786,6 @@ hr.double {
   min-height: 0;
 }
 
-
 /* --------------------------------------------
  *  breadcrumb
  *----------------------------------------------- */
@@ -793,8 +800,6 @@ hr.double {
   float: right;
 }
 .header-n-breadcrumb ol.breadcrumb{ margin-bottom: 0; }
-
-
 
 /* --------------------------------------------
  *  Login
