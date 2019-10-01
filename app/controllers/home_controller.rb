@@ -4,7 +4,7 @@ class HomeController < ApplicationController
     @home_note = Page.find_by_name("home-1")
     @banners = Banner.all
     countdown = Page.find_by_permalink("countdown")
-    countdown_splited = countdown.content.split("-")
+    countdown_splited = countdown.content.gsub("<p>", "").gsub("</p>", "").strip.split("-")
     @date = countdown_splited[2]
     @month = countdown_splited[1]
     @year = countdown_splited[0]
