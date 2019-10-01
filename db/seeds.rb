@@ -36,3 +36,8 @@ tenant_footer = Page.find_or_create_by(name: "tenant-footer") do |page|
 end
 puts tenant_footer.inspect
 
+countdown = Page.find_or_create_by(name: "countdown") do |page|
+  page.title = "countdown"
+  page.content = Date.today.to_s
+end
+puts countdown.inspect

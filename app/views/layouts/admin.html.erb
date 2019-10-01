@@ -56,8 +56,9 @@
         </div>
 
         <ul id="menu" class="links">
-          <li class="active"><%= link_to "HOME", admin_path %></li>
+          <li><%= link_to "HOME", admin_path %></li>
           <li><%= link_to "PAGES", admin_pages_path %></li>
+          <li><%= link_to "PLACES", admin_places_path %></li>
           <li><%= link_to "BANNER", admin_banners_path %></li>
           <li><%= link_to "DOWNLOAD", admin_downloads_path %></li>
           <li><%= link_to "HOTEL", admin_hotels_path %></li>
@@ -71,53 +72,6 @@
     <%= yield %>
 
     <footer>
-      <div class="footer-top-area">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-5 col-md-7 col-sm-7 col-12">
-              <div class="fw-info footer-widget">
-                <div class="flogo">
-                  <%= image_tag "logo-white.png", class: "logo2 img-fluid", style: "width:300px" %>
-                </div>
-                <%#*<p class="text">There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form by injected humour.</p>%>
-                <h4 class="social-title">Follow Us</h4>
-                <ul class="social">
-                  <li class="facebook"><a href="#"><%= fa_icon "facebook" %></a></li>
-                  <li class="twitter"><a href="#"><%= fa_icon "twitter" %></a></li>
-                  <li class="google"><a href="#"><%= fa_icon "google-plus" %></a></li>
-                  <li class="linkedin"><a href="#"><%= fa_icon "linkedin" %></a></li>
-                  <li class="instagram"><a href="#"><%= fa_icon "instagram" %></a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-              <div class="fw-links footer-widget">
-                <h2 class="title">Useful Links</h2>
-                <ul class="links">
-                  <li><a href="04_about.html">OASIS CENTRE ARENA</a></li>
-                  <li><a href="05_service.html">AEON MALL JAKARTA GARDEN CITY</a></li>
-                  <li><a href="07_two-column-grid.html">OFFICIAL HOTEL</a></li>
-                  <li><a href="13_blog-grid.html">INFO JAKARTA</a></li>
-                  <li><a href="17_contact.html">DOWNLOAD</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-4 col-12">
-              <div class="fw-contact footer-widget">
-                <h2 class="title">Contact info</h2>
-                <p class="text">
-                    Hans-Wilhelm-Gasse 0/3, 98051 Schwarzenberg Hans-Wilhelm-Gasse 0/3, 98051
-                    Schwarzenberg Hans-Wilhelm-Gasse 0/3, 98051 Schwarzenberg
-                  </p>
-                <ul class="info">
-                  <li><span><%= fa_icon "phone" %></span>+011-125-541</li>
-                  <li><span><%= fa_icon "envelope" %></i></span>info@example.com</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
       <div class="footer-bottom-area">
         <div class="container">
           <div class="row">

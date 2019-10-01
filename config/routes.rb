@@ -27,6 +27,7 @@ Rails.application.routes.draw do
       end
     end
     resources :pages
+    resources :places
   end
 
   root to: "home#index"

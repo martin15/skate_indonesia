@@ -1,6 +1,6 @@
 section.admin-section-content {
   padding: 135px 0 20px;
-  min-height: 300px;
+  min-height: 600px;
   font-size: 14px;
 }
 
@@ -28,7 +28,8 @@ section.admin-section-content a, #edit-image-modal input[type='submit']{
 #edit-image-modal .modal-body .tenant_image_image, 
 .admin-banners .banner_image, .admin-banners .banner_url,
 .admin-brands .brand_logo, .admin-news .news_banner,
-#edit-image-modal .modal-body  .portfolio_image_image { margin-bottom: 0px; }
+#edit-image-modal .modal-body  .portfolio_image_image,
+.place_image, .place_url{ margin-bottom: 0px!important; }
 .tenant-form-image img, .hotel-form-image img{ width: 200px; }
 .image-error{ border: 1px red solid; padding: 10px; border-radius: 5px; }
 .image-no-error{ border: 1px #fff solid; padding: 10px; border-radius: 5px; }

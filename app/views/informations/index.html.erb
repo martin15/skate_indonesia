@@ -8,10 +8,10 @@
     <div class="row">
       <div class="col-12 header-n-breadcrumb">
         <div class="row">
-          <div class="col-12 col-md-6">
-            <h2>INFO Jakarta</h2>
+          <div class="col-12 col-md-7">
+            <h2>WELCOME TO JAKARTA, INDONESIA!</h2>
           </div>
-          <div class="col-12 col-md-6 align-self-center">
+          <div class="col-12 col-md-5 align-self-center">
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
                 <li class="breadcrumb-item"><%= link_to "HOME", root_path %></li>
@@ -21,9 +21,30 @@
           </div>
         </div>
       </div>
-      <div class="col-12" id="tenant">
-        COMING SOON !!
+      <div class="col-12" id="place-header">
+        Here’s a list of recommended places you can visit while you’re here:
       </div>
+      <% @places.each do |place| %>
+        <div class="col-12" id="place">
+          <div class="row">
+            <div class="col-12 col-md-6"><%= image_tag place.get_image(:large), class: "img-fluid" %></div>
+            <div class="col-12 col-md-6">
+              <div class="plc-name"><%= place.name %></div>
+              <div class="plc-desc"><%= raw(place.description) %></div>
+              <div class="plc-address row">
+                <div class="col-2"><b>Address : </b></div>
+                <div class="col-10"><%= raw(place.address) %></div>
+              </div>
+              <% unless place.url.nil? %>
+                <div class="plc-url row">
+                  <div class="col-2"><b>Website : </b></div>
+                  <div class="col-10"><%= link_to place.url, "http://#{place.url}", target: "_blank" %></div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </section>

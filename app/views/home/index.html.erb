@@ -18,24 +18,31 @@
       navText : ['<span class="fa-stack"><i class="fa fa-circle fa-stack-1x"></i><i class="fa fa-chevron-circle-left fa-stack-1x fa-inverse"></i></span>','<span class="fa-stack"><i class="fa fa-circle fa-stack-1x"></i><i class="fa fa-chevron-circle-right fa-stack-1x fa-inverse"></i></span>']
     });
 
-    var deadline = new Date("Sep 23 2019 23:59:59 GMT+0700").getTime();
-    var x = setInterval(function() { 
-      var now = new Date().getTime(); 
-      var t = deadline - now; 
-      var days = Math.floor(t / (1000 * 60 * 60 * 24)); 
-      var hours = Math.floor((t%(1000 * 60 * 60 * 24))/(1000 * 60 * 60)); 
-      var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60)); 
-      var seconds = Math.floor((t % (1000 * 60)) / 1000);
-      $("#days").html(days);
-      $("#hours").html(hours);
-      $("#minutes").html(minutes);
-      $("#seconds").html(seconds);
-          if (t < 0) { 
-              clearInterval(x); 
-              document.getElementById("demo").innerHTML = "EXPIRED"; 
-          } 
-      }, 1000);
-
+    if("<%= @month %>" != "" && "<%= @date %>" != "" && "<%= @year %>" != ""){
+      var strArray=['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      console.log(strArray[<%= @month.to_i-1 %>])
+      var deadline = new Date(strArray[<%= @month.to_i-1 %>]+ " <%= @date %> <%= @year %> 23:59:59 GMT+0700").getTime();
+      var x = setInterval(function() {
+        var now = new Date().getTime();
+        var t = deadline - now;
+        var days = Math.floor(t / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((t%(1000 * 60 * 60 * 24))/(1000 * 60 * 60));
+        var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((t % (1000 * 60)) / 1000);
+        $("#days").html(days);
+        $("#hours").html(hours);
+        $("#minutes").html(minutes);
+        $("#seconds").html(seconds);
+            if (t < 0) {
+                clearInterval(x);
+                $("#timer-box").html("");
+                $("#timer-box").removeClass("timer-box");
+            }
+        }, 1000);
+      }else{
+        $("#timer-box").html("");
+        $("#timer-box").removeClass("timer-box");
+      }
   });
 </script>
 
@@ -103,26 +110,24 @@
 <section id="home-note" class="main-section">
   <div class="container">
     <div class="row">
-      <div class="col-12 col-md-8 offset-md-2 timer-box">
-        <%# <div class=""> %>
-          <div class="row">
-            <div class="col-6 col-md-3 days-box">
-              <span class="l1-txt2 p-b-4 count" id="days">&nbsp;</span>
-              <span class="l1-txt2 p-b-4 count-text">Days</span>
-            </div>
-            <div class="col-6 col-md-3 days-box">
-              <span class="l1-txt2 p-b-4 count" id="hours">&nbsp;</span>
-              <span class="l1-txt2 p-b-4 count-text">Hours</span>
-            </div>
-            <div class="col-6 col-md-3 days-box">
-              <span class="l1-txt2 p-b-4 count" id="minutes">&nbsp;</span>
-              <span class="l1-txt2 p-b-4 count-text">Minutes</span>
-            </div>
-            <div class="col-6 col-md-3 days-box">
-              <span class="l1-txt2 p-b-4 count" id="seconds">&nbsp;</span>
-              <span class="l1-txt2 p-b-4 count-text">Seconds</span>
-            </div>
-          <%# </div> %>
+      <div class="col-12 col-md-8 offset-md-2 timer-box" id="timer-box">
+        <div class="row">
+          <div class="col-6 col-md-3 days-box">
+            <span class="l1-txt2 p-b-4 count" id="days">&nbsp;</span>
+            <span class="l1-txt2 p-b-4 count-text">Days</span>
+          </div>
+          <div class="col-6 col-md-3 days-box">
+            <span class="l1-txt2 p-b-4 count" id="hours">&nbsp;</span>
+            <span class="l1-txt2 p-b-4 count-text">Hours</span>
+          </div>
+          <div class="col-6 col-md-3 days-box">
+            <span class="l1-txt2 p-b-4 count" id="minutes">&nbsp;</span>
+            <span class="l1-txt2 p-b-4 count-text">Minutes</span>
+          </div>
+          <div class="col-6 col-md-3 days-box">
+            <span class="l1-txt2 p-b-4 count" id="seconds">&nbsp;</span>
+            <span class="l1-txt2 p-b-4 count-text">Seconds</span>
+          </div>
         </div>
       </div>
       <div class="col-12 simple-content">
