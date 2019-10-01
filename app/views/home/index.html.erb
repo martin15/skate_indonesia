@@ -20,7 +20,6 @@
 
     if("<%= @month %>" != "" && "<%= @date %>" != "" && "<%= @year %>" != ""){
       var strArray=['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-      console.log(strArray[<%= @month.to_i-1 %>])
       var deadline = new Date(strArray[<%= @month.to_i-1 %>]+ " <%= @date %> <%= @year %> 23:59:59 GMT+0700").getTime();
       var x = setInterval(function() {
         var now = new Date().getTime();
