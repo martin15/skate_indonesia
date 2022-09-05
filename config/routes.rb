@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'aeon-mall-jakarta-garden-city' => 'tenants#index', as: "tenants"
   get 'official-hotel' => 'hotels#index', as: "hotels"
   get 'info-jakarta' => 'informations#index', as: "informations"
+  get 'covid-19-safety-protocol' => 'home#covid_19', as: "covid_19"
   resources :downloads, only: [:index]
 
   get    '/login' => 'session#new', as: "login"

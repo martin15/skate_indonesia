@@ -57,12 +57,17 @@
         </div>
 
         <ul id="menu" class="links">
-          <li class="active"><%= link_to "HOME", root_path %></li>
-          <li><%= link_to "OASIS CENTRE ARENA", contact_us_path %></li>
-          <li><%= link_to "AEON MALL JAKARTA GARDEN CITY", tenants_path %></li>
-          <li><%= link_to "OFFICIAL HOTEL", hotels_path %></li>
-          <li><%= link_to "PLACE TO VISIT", informations_path %></li>
-          <li><%= link_to "DOWNLOADS", downloads_path %></li>
+          <li class="<%= menu_indicator('home, index') %>"><%= link_to "HOME", root_path %></li>
+          <li class="<%= menu_indicator('contact_us') %>"><%= link_to "OASIS CENTRE ARENA", contact_us_path %></li>
+          <%
+=begin%>
+ <li><%= link_to "AEON MALL JAKARTA GARDEN CITY", tenants_path %></li> 
+<%
+=end%>
+          <li class="<%= menu_indicator('hotels') %>"><%= link_to "OFFICIAL HOTEL", hotels_path %></li>
+          <li class="<%= menu_indicator('informations') %>"><%= link_to "PLACE TO VISIT", informations_path %></li>
+          <li class="<%= menu_indicator('home, covid_19') %>"><%= link_to "COVID-19 Safety Protocol", covid_19_path %></li>
+          <li class="<%= menu_indicator('downloads') %>"><%= link_to "ABOUT SI 2022", downloads_path %></li>
         </ul>
       </div>
     </nav>
@@ -91,10 +96,15 @@
                 <h2 class="title">Useful Links</h2>
                 <ul class="links">
                   <li><%= link_to "OASIS CENTRE ARENA", contact_us_path %></li>
-                  <li><%= link_to "AEON MALL JAKARTA GARDEN CITY", tenants_path %></li>
+                  <%
+=begin%>
+ <li><%= link_to "AEON MALL JAKARTA GARDEN CITY", tenants_path %></li> 
+<%
+=end%>
                   <li><%= link_to "OFFICIAL HOTEL", hotels_path %></li>
                   <li><%= link_to "INFO JAKARTA", informations_path %></li>
-                  <li><%= link_to "DOWNLOADS", downloads_path %></li>
+                  <li><%= link_to "COVID-19 Safety Protocol", covid_19_path %></li>
+                  <li><%= link_to "ABOUT SI 2022", downloads_path %></li>
                 </ul>
               </div>
             </div>
@@ -109,7 +119,7 @@
                   <li><span><%= fa_icon "map-marker" %></span>Oasis Centre Arena<br />
                       AEON MALL Jakarta Garden City, Cakung - Jakarta Timur, 13910
                   </li>
-                  <li><span><%= fa_icon "envelope" %></span>info@oasiscentrearena.com</li>
+                  <li><span><%= fa_icon "envelope" %></span>info.skateindonesia@gmail.com</li>
                 </ul>
               </div>
             </div>

@@ -1,0 +1,87 @@
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag "owl.carousel" %>
+  <%= stylesheet_link_tag  "owl.carousel", "animate", "owl.theme" %>
+<% end %>
+
+<script>
+  $(document).ready(function(){
+    $('.banner').owlCarousel({
+      animateOut: 'slideOutDown',
+      animateIn: 'flipInX',
+      loop: true,
+      autoplay: true,
+      autoplayHoverPause: true,
+      items: 1,
+      nav : true,
+      dotsEach: true,
+      autoplaySpeed: 2000,
+      navText : ['<span class="fa-stack"><i class="fa fa-circle fa-stack-1x"></i><i class="fa fa-chevron-circle-left fa-stack-1x fa-inverse"></i></span>','<span class="fa-stack"><i class="fa fa-circle fa-stack-1x"></i><i class="fa fa-chevron-circle-right fa-stack-1x fa-inverse"></i></span>']
+    });
+  });
+</script>
+
+<section class="main-section <%= manage_menu %>">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 header-n-breadcrumb">
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <h2>COVID 19 Safety Protocol</h2>
+          </div>
+          <div class="col-12 col-md-6 align-self-center">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><%= link_to "HOME", root_path %></li>
+                <li class="breadcrumb-item active" aria-current="page">COVID 19 Safety Protocol</li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<%
+=begin%>
+ <section id="header" style='margin-top:0px'>
+  <div class="row no-gutters f-banner mb-5">
+    <div class="col-12">
+        <div class="banner owl-carousel owl-theme">
+          <div class="item">
+            <%= image_tag "Peduli Lindungi-01.png" %>
+          </div>
+          <div class="item">
+            <%= image_tag "Peduli Lindungi-02.png" %>
+          </div>
+          <div class="item">
+            <%= image_tag "Peduli Lindungi-03.png" %>
+          </div>
+          <div class="item">
+            <%= image_tag "Peduli Lindungi-05.png" %>
+          </div>
+          <div class="item">
+            <%= image_tag "Peduli Lindungi-06.png" %>
+          </div>
+        </div>
+    </div>
+  </div>
+</section> 
+<%
+=end%>
+
+<section class="main-section mb-5"  style='margin-top:0px'>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <%= image_tag 'Covid 19 protocol-01.png', class: 'img-fluid mb-5' %>
+        <%= image_tag 'Covid 19 protocol-02.png', class: 'img-fluid mb-5' %>
+        <%= image_tag 'Covid 19 protocol-03.png', class: 'img-fluid mb-5' %>
+        <%= image_tag 'Covid 19 protocol-04.png', class: 'img-fluid' %>
+      </div>
+      
+    </div>
+  </div>
+</section>
+

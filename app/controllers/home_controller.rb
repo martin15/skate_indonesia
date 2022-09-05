@@ -9,4 +9,7 @@ class HomeController < ApplicationController
     @month = countdown_splited[1]
     @year = countdown_splited[0]
   end
+
+  def covid_19
+  end
 end

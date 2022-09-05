@@ -24,6 +24,14 @@ module ApplicationHelper
     return "<span class='tg-themetag tg-featuretag'>#{text}</span>"
   end
 
+  def menu_indicator(this_menu)
+    if this_menu.include?(", ")
+      return "active" if this_menu.include?(controller_name) && this_menu.include?(action_name)
+    else
+      return "active" if this_menu.include?(controller_name)
+    end
+  end
+
   def hotel_star(counter)
     str = ""
     counter.to_i.times.each do |x|
