@@ -5,7 +5,7 @@
 
 <script>
   $(document).ready(function(){
-    $('.banner').owlCarousel({
+    $('.sponsor, .partnership').owlCarousel({
       animateOut: 'slideOutDown',
       animateIn: 'flipInX',
       loop: true,
@@ -26,13 +26,13 @@
       <div class="col-12 header-n-breadcrumb">
         <div class="row">
           <div class="col-12 col-md-6">
-            <h2>COVID 19 Safety Protocol</h2>
+            <h2>Sponsor</h2>
           </div>
           <div class="col-12 col-md-6 align-self-center">
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
                 <li class="breadcrumb-item"><%= link_to "HOME", root_path %></li>
-                <li class="breadcrumb-item active" aria-current="page">COVID 19 Safety Protocol</li>
+                <li class="breadcrumb-item active" aria-current="page">SPONSOR AND PARTNERSHIP</li>
               </ol>
             </nav>
           </div>
@@ -42,46 +42,41 @@
   </div>
 </section>
 
-
-<%
-=begin%>
- <section id="header" style='margin-top:0px'>
+<section id="header" style='margin-top:0px'>
   <div class="row no-gutters f-banner mb-5">
     <div class="col-12">
-        <div class="banner owl-carousel owl-theme">
-          <div class="item">
-            <%= image_tag "Peduli Lindungi-01.png" %>
-          </div>
-          <div class="item">
-            <%= image_tag "Peduli Lindungi-02.png" %>
-          </div>
-          <div class="item">
-            <%= image_tag "Peduli Lindungi-03.png" %>
-          </div>
-          <div class="item">
-            <%= image_tag "Peduli Lindungi-05.png" %>
-          </div>
-          <div class="item">
-            <%= image_tag "Peduli Lindungi-06.png" %>
-          </div>
+        <div class="sponsor owl-carousel owl-theme">
+          <% @sponsors.each do |sponsor| %>
+            <div class="item">
+              <%= image_tag sponsor.image.url(:large) %>
+            </div>
+          <% end %>
         </div>
-    </div>
-  </div>
-</section> 
-<%
-=end%>
-
-<section class="main-section mb-5"  style='margin-top:0px'>
-  <div class="container">
-    <div class="row">
-      <div class="col-12 text-center">
-        <%= image_tag 'Covid 19 protocol-01.png', class: 'img-fluid mb-5' %>
-        <%= image_tag 'Covid 19 protocol-02.png', class: 'img-fluid mb-5' %>
-        <%= image_tag 'Covid 19 protocol-03.png', class: 'img-fluid mb-5' %>
-        <%= image_tag 'Covid 19 protocol-04.png', class: 'img-fluid' %>
-      </div>
-      
     </div>
   </div>
 </section>
 
+<section id="header" style='margin-top:0px'>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 header-n-breadcrumb">
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <h2>Partnership</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row no-gutters f-banner mb-5">
+    <div class="col-12">
+        <div class="partnership owl-carousel owl-theme">
+          <% @partnerships.each do |partnership| %>
+            <div class="item">
+              <%= image_tag partnership.image.url(:large) %>
+            </div>
+          <% end %>
+        </div>
+    </div>
+  </div>
+</section>

@@ -26,6 +26,7 @@
               <th>Image</th>
               <th>URL</th>
               <th>Order</th>
+              <th>Type</th>
               <th>&nbsp;</th>
             </tr>
           </thead>
@@ -36,6 +37,7 @@
                 <td><%= image_tag banner.image.url(:thumb) %></td>
                 <td><%= banner.url %></td>
                 <td><%= banner.order || '-' %></td>
+                <td><%= banner.banner_type %></td>
                 <td>
                   <%= link_to "Edit", edit_admin_banner_path(banner.id, :banner => params[:banner]), :class => "btn btn-success" %>
                   <%= link_to "Delete", admin_banner_path(banner.id, :banner => params[:banner] ), :method => :delete,
